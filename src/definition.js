@@ -85,6 +85,11 @@ function onElse(ctx, token) {
 }
 
 function onUndef(ctx, token) {
+    // Don't undef if not emitting
+    if (!ctx.defStack[ctx.defStack.length - 1])
+    {
+        return;
+    }
     //0 12345678
     // '%undef X'
     var undefDef = token.value.substring(8);
@@ -92,6 +97,11 @@ function onUndef(ctx, token) {
 }
 
 function onInclude(ctx, token) {
+    // Don't include if not emitting
+    if (!ctx.defStack[ctx.defStack.length - 1])
+    {
+        return;
+    }
     //0 123456789A
     // '%include X'
     var includeId = token.value.substring(10);
