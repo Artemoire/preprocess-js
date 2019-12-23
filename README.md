@@ -35,4 +35,4 @@ console.log(processed);
 - include (includes defines from includes property of config i.e // %include SomeOtherInc)
 - echo (console.logs message on processing)
 - error (throws exception on processing)
-- /*%%*/ - similar to ## operator in the c preprocessor
+- /\*%%\*/ - similar to ## operator in the c preprocessor
